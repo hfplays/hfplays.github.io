@@ -129,6 +129,7 @@ body {
     background-color: var(--3);
     position: sticky;
     top: 0px;
+    z-index: 9999;
 }
 
 .nav-flex {
@@ -306,6 +307,14 @@ nav ul li:hover ul {
     margin: 10px;
     border-radius: 10px;
     cursor: context-menu;
+
+    transition: all 200ms 20ms ease-in-out;
+}
+
+.benchmark-items:hover {
+    transform: translateY(-6px);
+
+    transition: all 200ms 99ms ease-in-out;
 }
 
 .benchmark-items a button {
@@ -340,6 +349,14 @@ nav ul li:hover ul {
 
 .bench-image {
     width: 50%;
+
+    transition: all 200ms 20ms ease-in-out;
+}
+
+.bench-image:hover {
+    transform: scale(1.025);
+
+    transition: all 200ms 20ms ease-in-out;
 }
 
 .bench-text {
@@ -400,6 +417,12 @@ nav ul li:hover ul {
     justify-content: center;
 }
 
+.tutorial-card:hover {
+    transform: translateY(-6px);
+
+    transition: all 200ms 20ms ease-in-out;
+}
+
 .tutorial-card {
     width: 500px;
     padding: 20px;
@@ -408,6 +431,8 @@ nav ul li:hover ul {
     text-align: center;
     margin: 10px;
     border-radius: 10px;
+
+    transition: all 200ms 20ms ease-in-out;
 }
 
 .tutorial-card img {
@@ -483,7 +508,8 @@ nav ul li:hover ul {
 }
 
 .garis .garis-bawah {
-    border: 1px solid var(--1);;
+    border: 1px solid var(--1);
+    ;
     width: 98%;
     margin: 0 auto;
 }
