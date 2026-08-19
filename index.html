@@ -1,291 +1,651 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HF Plays</title>
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/hfplays.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HF Plays — Benchmark, Gaming & Hardware Insights</title>
+    <link rel="icon" type="image/png" href="img/hfplays.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
-    <!-- top -->
-    <div class="top">
-        <div class="top-flex">
-            <div class="log-n-reg">
-                <h2 id="welcome-text"></h2>
-            </div>
-        </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 text-white" href="#home">
+                HF <span>Plays</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars text-white fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#benchmarks">Benchmarks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tutorials">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
-    <!-- banner -->
-    <div class="banner">
-        <div class="text">
-            <img src="img/hfplays.png" alt="hfplays logo">
-            <h2>HF Plays</h2>
-            <p>Benchmark, Gaming & Tutorial</p>
-            <div class="link">
-                <a href="https://www.youtube.com/@hfplays/"><button>Official YouTube<br>Channel</button></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- navigasi -->
-    <div class="nav-container">
-        <div class="nav-flex">
-            <label for="submenu"><i class="fa-solid fa-bars"></i></i></label>
-            <input type="checkbox" name="" id="submenu">
-            <div class="nav-brand">HF Plays</div>
-            <nav>
-                <ul>
-                    <li id="home1"><a href="#home">Home</a></li>
-                    <li id="benchmark1"><a href="#benchmarks">Benchmarks</a></li>
-                    <li id="tutorials1"><a href="#tutorials">Tutorials</a></li>
-                    <li id="about1"><a href="#about">About</a></li>
-                    <li id="hardware"><a style="cursor: pointer;">Hardware Reviews<i
-                                class="fa-solid fa-caret-down"></i></a>
-                        <ul>
-                            <li><a
-                                    href="https://www.intel.com/content/www/us/en/products/sku/128988/intel-celeron-processor-n4000-4m-cache-up-to-2-60-ghz/specifications.html">Celeron
-                                    N4000</a></li>
-                            <li><a href="https://www.techpowerup.com/cpu-specs/ryzen-5-7530u.c3036">Ryzen 5 7430U</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-icon-dropdown" href="javascript:void(0)" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" title="Hardware Specs"
+                            aria-label="Hardware Specs">
+                            <i class="fa-solid fa-microchip me-1"></i>
+                            <i class="fa-solid fa-chevron-down nav-chevron-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                            <li>
+                                <h6 class="dropdown-header text-uppercase text-purple fw-bold">CPU Specs</h6>
                             </li>
-                            <li><a href="https://www.techpowerup.com/cpu-specs/ryzen-5-5500.c2756">Ryzen 5 5500</a></li>
-                            <li><a href="https://www.techpowerup.com/gpu-specs/radeon-rx-6600.c3696">RX 6600</a></li>
-                            <li><a href="https://www.techpowerup.com/gpu-specs/radeon-rx-580-2048sp.c3321">RX 580 2048SP</a></li>
-                            <li><a href="https://www.techpowerup.com/gpu-specs/geforce-gt-1030.c2954">GT 1030</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.techpowerup.com/cpu-specs/ryzen-5-7530u.c3036"
+                                    target="_blank">Ryzen 5 7430U</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.intel.com/content/www/us/en/products/sku/128988/intel-celeron-processor-n4000-4m-cache-up-to-2-60-ghz/specifications.html"
+                                    target="_blank">Celeron N4000</a></li>
+                            <li><a class="dropdown-item" href="https://www.techpowerup.com/cpu-specs/ryzen-5-5500.c2756"
+                                    target="_blank">Ryzen 5 5500</a></li>
+                            <li>
+                                <hr class="dropdown-divider border-secondary opacity-25">
+                            </li>
+                            <li>
+                                <h6 class="dropdown-header text-uppercase text-purple fw-bold">GPU Specs</h6>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.techpowerup.com/gpu-specs/radeon-rx-6600.c3696"
+                                    target="_blank">Radeon RX 6600</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.techpowerup.com/gpu-specs/radeon-rx-580-2048sp.c3321"
+                                    target="_blank">Radeon RX 580 2048SP</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.techpowerup.com/gpu-specs/geforce-gt-1030.c2954"
+                                    target="_blank">GeForce GT 1030</a></li>
                         </ul>
                     </li>
-                    <li id="contact1"><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
-        </div>
-    </div>
-
-    <!-- home -->
-    <section id="home">
-        <!-- hero -->
-        <div class="container-hero">
-            <div class="text">
-                <h2>LEVEL UP YOUR GAMING PERFORMANCE</h2>
-                <p>Discover the ultimate way to optimize your PC with complete benchmark guides and in-depth tutorials.
-                    <br>
-                    Learn step-by-step how to achieve maximum FPS and a smooth, lag-free gaming experience.
-                </p>
-                <a href="https://discord.com/invite/ZDk9HJsNKS">Join Now</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- info -->
-    <div class="container-info">
-        <div class="info">
-            <a href="https://www.youtube.com/@hfplays/"><i style="color: #ff0000;"
-                    class="fa-brands fa-youtube fa-xl"></i></a>
-            <div class="judul">YouTube</div>
-            <p>Watch our latest benchmark videos, PC build tutorials, and gaming tips on our YouTube channel!</p>
-        </div>
-        <div class="info">
-            <a href="https://www.instagram.com/hfplays/"><i style="color: #e1306c;"
-                    class="fa-brands fa-instagram fa-xl"></i></a>
-            <div class="judul">Instagram</div>
-            <p>Get quick updates, gaming gear highlights, and FPS performance clips from your favorite games.</p>
-        </div>
-        <div class="info">
-            <a href="https://www.tiktok.com/@6hfplays"><i style="color: white; text-shadow: 2px 1px 5px #ff0050;"
-                    class="fa-brands fa-tiktok fa-xl"></i></a>
-            <div class="judul">TikTok</div>
-            <p>Enjoy short, energetic clips featuring gaming setups, FPS tests, and fun gamer community moments!</p>
-        </div>
-        <div class="info">
-            <a href="https://discord.com/users/790507566333558784"><i style="color: #5865f2
-;" class="fa-brands fa-discord fa-xl"></i></a>
-            <div class="judul">Discord</div>
-            <p>Join our Discord community to chat, share settings, and play together with fellow gamers!</p>
-        </div>
-    </div>
-
-    <!-- benchmark -->
-    <section id="benchmarks">
-        <!-- preview -->
-        <div class="container-benchmarks">
-            <div class="benchmark-text">
-                <h2>Benchmarks</h2>
-                <hr>
-            </div>
-            <div class="benchmark-flex">
-                <div class="benchmark-items">
-                    <img src="img/benchmarks/7430u.png" alt="ryzen 5 74330u">
-                    <h2>AMD Ryzen 5 7430U</h2>
-                    <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBJY1x9IXE2FF-0diNU4NJD1"><button>Watch
-                            Now</button></a>
-                </div>
-                <div class="benchmark-items">
-                    <img src="img/benchmarks/celeronn4000.png" alt="celeron n4000">
-                    <h2>Intel Celeron N4000</h2>
-                    <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBKCecBjd6vrMXDHFKFu_ygA"><button>Watch
-                            Now</button></a>
-                </div>
-                <div class="benchmark-items">
-                    <img src="img/benchmarks/rx6600.png" alt="rx 6600">
-                    <h2>AMD RX 6600</h2>
-                    <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBLyM8PpuOlRap0Hmmi8cGjF"><button>Watch
-                            Now</button></a>
-                </div>
-                <div class="benchmark-items">
-                    <img src="img/benchmarks/rx580.png" alt="rx 580">
-                    <h2>AMD RX 580 2048SP</h2>
-                    <a href="https://youtube.com/playlist?list=PLo8D4GeFEFBICuMkv5Xp4iaB-OLSD8saN&si=8zSu7i02yTubLCwA"><button>Watch
-                            Now</button></a>
-                </div>
-                <div class="benchmark-items">
-                    <img src="img/benchmarks/gt1030.png" alt="gt 1030">
-                    <h2>NVIDIA GT 1030 GDDR5</h2>
-                    <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBL1R3QpXSnTkKQjEu6E6nyN"><button>Watch
-                            Now</button></a>
-                </div>
-            </div>
-            <div class="bench-flex">
-                <div class="bench-image">
-                    <img src="https://i.pcmag.com/imagery/articles/03821j291ihhHDILBFPT3BV-5..v1569470579.png"
-                        alt="what is a benchmark">
-                </div>
-                <div class="bench-text">
-                    <h2>What is a Benchmark?</h2>
-                    <hr>
-                    <br>
-                    <p>A benchmark is a performance test that measures how well your computer hardware—such as the
-                        processor (CPU),
-                        graphics card (GPU), and memory (RAM)—handles specific tasks, games, or software workloads.
-                        Benchmarking allows
-                        you to evaluate the strengths and weaknesses of your system, compare different setups, and see
-                        how your PC
-                        performs against others. <br>
-                        In this section, you’ll find detailed benchmark results from various processors and graphics
-                        cards, tested with
-                        popular modern games. These results can help you make informed decisions when upgrading or
-                        building your next
-                        gaming PC. Whether you want to know how many frames per second (FPS) your system can achieve in
-                        different titles
-                        or simply compare hardware efficiency, our benchmarks provide reliable insights based on
-                        real-world testing.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- tutorials -->
-    <section id="tutorials">
-        <div class="tutorial-text">
-            <h2>Tutorials</h2>
-            <hr>
-            <p>Learn how to optimize your PC for gaming, build custom setups, and understand hardware performance
-                through our step-by-step tutorials.
-                <br>
-                Whether you're a beginner or an experienced gamer, these guides will help you get the best out of your
-                system.
+    <header class="hero-section" id="home">
+        <div class="container text-center">
+            <img src="img/hfplays.png" alt="HF Plays Logo" class="hero-avatar mb-4">
+            <h1 class="display-5 fw-bold text-white mb-3">LEVEL UP YOUR <span
+                    style="color: var(--accent-purple);">GAMING PERFORMANCE</span></h1>
+            <p class="lead text-muted-custom mx-auto mb-4" style="max-width: 680px;">
+                Discover the ultimate way to optimize your PC with real-world benchmark archives, FPS comparisons, and
+                hardware optimization tutorials.
             </p>
-            <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBJgeAheblQg4y3XEK_ysuHL"><button>Tutorial Playlist</button></a>
+            <div class="d-flex flex-column align-items-center gap-3">
+                <a href="https://www.youtube.com/@hfplays/" target="_blank" class="btn btn-purple"
+                    style="width: 280px; min-width: 220px; max-width: 100%;">
+                    <i class="fa-brands fa-youtube me-2"></i> YouTube Channel
+                </a>
+                <div class="d-flex justify-content-center gap-3 flex-wrap" style="width: min(100%, 640px);">
+                    <a href="https://bench.hfplays.my.id" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-outline-custom" style="width: 280px; min-width: 220px; max-width: 100%;">
+                        <i class="fa-solid fa-chart-line me-2"></i> Open BenchmarkResult
+                    </a>
+                    <a href="https://discord.com/invite/ZDk9HJsNKS" target="_blank" class="btn btn-outline-custom"
+                        style="width: 280px; min-width: 220px; max-width: 100%;">
+                        <i class="fa-brands fa-discord me-2"></i> Join Community
+                    </a>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <div class="tutorial-flex">
-            <div class="tutorial-card">
-                <img src="img/tutorials/boost_fps.png" alt="Optimize FPS">
-                <h3>Boost Your FPS in Games</h3>
-                <hr>
-                <p>Simple tweaks and settings to get smoother gameplay without upgrading your hardware.</p>
-                <a href="https://youtu.be/AFTU3k1OzAo"><button>Watch Now</button></a>
-            </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 h-100 d-flex flex-column text-center">
+                        <div class="fs-2 text-danger mb-3"><i class="fa-brands fa-youtube"></i></div>
+                        <h5 class="text-white fw-bold mb-2">YouTube</h5>
+                        <p class="text-muted-custom small mb-4 flex-grow-1">Watch game benchmark footage,
+                            configurations, and PC optimization guides.</p>
+                        <a href="https://www.youtube.com/@hfplays/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-outline-custom w-100 mt-auto">Visit Channel</a>
+                    </div>
+                </div>
 
-            <div class="tutorial-card">
-                <img src="img/tutorials/build_a_pc.png" alt="Build a Gaming PC">
-                <h3>Build Your First Gaming PC</h3>
-                <hr>
-                <p>A complete guide to choosing parts, assembling, and setting up your own gaming rig.</p>
-                <a href="https://youtu.be/J_fDtQgClrI"><button>Watch Now</button></a>
-            </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 h-100 d-flex flex-column text-center">
+                        <div class="fs-2 mb-3" style="color: #e1306c;"><i class="fa-brands fa-instagram"></i></div>
+                        <h5 class="text-white fw-bold mb-2">Instagram</h5>
+                        <p class="text-muted-custom small mb-4 flex-grow-1">Highlights, short game clips, and setup
+                            archives directly on your feed.</p>
+                        <a href="https://www.instagram.com/hfplays/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-outline-custom w-100 mt-auto">Follow Profile</a>
+                    </div>
+                </div>
 
-            <div class="tutorial-card">
-                <img src="img/tutorials/benchmark_like_a_pro.png" alt="Benchmark Guide">
-                <h3>Benchmark Like a Pro</h3>
-                <hr>
-                <p>Learn how to run and interpret benchmark tests to measure your system’s true power.</p>
-                <a href="https://youtu.be/wG_000tS6Nk"><button>Watch Now</button></a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 h-100 d-flex flex-column text-center">
+                        <div class="fs-2 text-white mb-3"><i class="fa-brands fa-tiktok"></i></div>
+                        <h5 class="text-white fw-bold mb-2">TikTok</h5>
+                        <p class="text-muted-custom small mb-4 flex-grow-1">Quick FPS comparisons, low-end gaming tests,
+                            and short tips.</p>
+                        <a href="https://www.tiktok.com/@6hfplays" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-outline-custom w-100 mt-auto">Watch Shorts</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 h-100 d-flex flex-column text-center">
+                        <div class="fs-2 mb-3" style="color: #5865f2;"><i class="fa-brands fa-discord"></i></div>
+                        <h5 class="text-white fw-bold mb-2">Discord</h5>
+                        <p class="text-muted-custom small mb-4 flex-grow-1">Join our community discussions, share
+                            configs, and game together.</p>
+                        <a href="https://discord.com/users/790507566333558784" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-outline-custom w-100 mt-auto">Join Server</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- about -->
-    <section id="about">
-        <h2>About HF Plays</h2>
-        <div class="about-content">
-            <h3>Hilmi Fauzan</h3>
-            <p><strong>Content Creator | Web Developer</strong></p>
-            <p>
-                Hilmi Fauzan is a passionate content creator specializing in benchmarking and testing game performance
-                on low-end PCs. With extensive experience in producing informative and engaging content, he focuses on
-                game optimization, performance comparison, and FPS improvement tips.
-            </p>
-            <p>
-                He is skilled in video production, system performance analysis, and managing gaming-related websites.
-                In addition, he has strong web development skills using HTML, CSS, and JavaScript to design and maintain
-                professional content platforms that deliver value to the gaming community.
-            </p>
-        </div>
-    </section>
+    <section class="py-5" id="benchmarks">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Hardware <span>Benchmarks</span></h2>
+                <p class="text-muted-custom">Explore extensive gaming benchmarks categorized by processor and graphics
+                    card configs.</p>
+            </div>
 
-    <div class="garis">
-        <hr class="garis-bawah">
-    </div>
-
-    <!-- contact -->
-    <section id="contact">
-        <footer>
-            <div class="footer-container">
-                <div class="footer-about">
-                    <h3>HF Plays</h3>
-                    <p>
-                        Your trusted source for PC performance insights, benchmark results,
-                        and gaming hardware tutorials. Built by gamers, for gamers.
-                    </p>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/benchmarks/7430u.png" class="card-img-top-cover" alt="AMD Ryzen 5 7430U">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold mb-2">AMD Ryzen 5 7430U</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Radeon Vega 7 integrated graphics
+                                testing across latest AAA & esports titles.</p>
+                            <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBJY1x9IXE2FF-0diNU4NJD1"
+                                target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-solid fa-play me-1"></i> Watch Playlist
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#benchmarks">Benchmarks</a></li>
-                        <li><a href="#tutorials">Tutorials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/benchmarks/celeronn4000.png" class="card-img-top-cover"
+                                alt="Intel Celeron N4000">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold mb-2">Intel Celeron N4000</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Ultra low-end hardware capabilities,
+                                light gaming, and emulation benchmark archive.</p>
+                            <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBKCecBjd6vrMXDHFKFu_ygA"
+                                target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-solid fa-play me-1"></i> Watch Playlist
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="footer-socials">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/hfplays/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://discord.com/users/790507566333558784"><i class="fa-brands fa-discord"></i></a>
-                        <a href="https://wa.me/6283874760794"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="https://www.facebook.com/HFPlays/"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/benchmarks/rx6600.png" class="card-img-top-cover" alt="AMD Radeon RX 6600">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold mb-2">AMD RX 6600 8GB</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">1080p High/Ultra preset gaming
+                                benchmarks paired with Ryzen 5 5500.</p>
+                            <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBLyM8PpuOlRap0Hmmi8cGjF"
+                                target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-solid fa-play me-1"></i> Watch Playlist
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/benchmarks/rx580.png" class="card-img-top-cover" alt="AMD RX 580 2048SP">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold mb-2">AMD RX 580 2048SP</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Budget GPU champion gaming tests and
+                                performance longevity in modern games.</p>
+                            <a href="https://youtube.com/playlist?list=PLo8D4GeFEFBICuMkv5Xp4iaB-OLSD8saN"
+                                target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-solid fa-play me-1"></i> Watch Playlist
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/benchmarks/gt1030.png" class="card-img-top-cover" alt="NVIDIA GT 1030 GDDR5">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold mb-2">NVIDIA GT 1030 GDDR5</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Entry-level graphics card testing with
+                                modern resolution scaling & optimizations.</p>
+                            <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBL1R3QpXSnTkKQjEu6E6nyN"
+                                target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-solid fa-play me-1"></i> Watch Playlist
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/benchmarks/other_games.png" class="card-img-top-cover" alt="Other Benchmarks">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold mb-2">Other</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Explore indie titles, emulation tests,
+                                experimental graphics tweaks, and custom performance archives.</p>
+                            <a href="https://www.youtube.com/@hfplays/playlists" target="_blank"
+                                class="btn btn-sm btn-purple w-100">
+                                <i class="fa-solid fa-play me-1"></i> Watch Playlist
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy;2025 HF Plays. All Rights Reserved.</p>
+            <div class="glass-card p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-5">
+                        <img src="img/benchmark_meaning.png" class="img-fluid rounded-4" alt="What is a benchmark">
+                    </div>
+                    <div class="col-lg-7">
+                        <h3 class="text-white fw-bold mb-3">What is a Benchmark?</h3>
+                        <p class="text-muted-custom">
+                            A benchmark is a standardized performance test that measures how well computer components
+                            (CPU, GPU, and RAM) execute real-world tasks, games, and graphical workloads.
+                        </p>
+                        <p class="text-muted-custom mb-0">
+                            Our benchmarks present frame rate metrics (Average FPS, 1% Lows, and frame time stability)
+                            so you can make informed decisions when upgrading hardware or tweaking in-game graphic
+                            configurations.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </footer>
-
+        </div>
     </section>
-    <!-- <script>
-        let input = prompt("What's Your Name?");
-        let output = document.getElementById("welcome-text");
-        output.innerHTML = `Welcome ${input}`;
-    </script> -->
+
+    <section class="py-5" id="tutorials">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-5">
+                <div>
+                    <h2 class="section-title mb-1">Step-by-Step <span>Tutorials</span></h2>
+                    <p class="text-muted-custom mb-0">Learn how to boost framerates, tweak Windows settings, and build
+                        your gaming rig.</p>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLo8D4GeFEFBJgeAheblQg4y3XEK_ysuHL" target="_blank"
+                    class="btn btn-outline-custom">
+                    <i class="fa-solid fa-list me-2"></i> All Tutorials
+                </a>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/tutorials/boost_fps.png" class="card-img-top-cover" alt="Boost FPS in Games">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold">Boost Your FPS in Games</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Simple tweaks, driver settings, and
+                                scaling options to maximize gameplay smoothness.</p>
+                            <a href="https://youtu.be/AFTU3k1OzAo" target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-brands fa-youtube me-2"></i> Watch Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/tutorials/build_a_pc.png" class="card-img-top-cover"
+                                alt="Build First Gaming PC">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold">Build Your First Gaming PC</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Complete assembly guide from selecting
+                                components to cable management and initial boot.</p>
+                            <a href="https://youtu.be/J_fDtQgClrI" target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-brands fa-youtube me-2"></i> Watch Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card h-100 d-flex flex-column">
+                        <div class="card-img-wrapper">
+                            <img src="img/tutorials/benchmark_like_a_pro.png" class="card-img-top-cover"
+                                alt="Benchmark Like a Pro">
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="text-white fw-bold">Benchmark Like a Pro</h5>
+                            <p class="text-muted-custom small mb-4 flex-grow-1">Master overlay tools like MSI
+                                Afterburner, interpret 1% lows, and test game stability.</p>
+                            <a href="https://youtu.be/wG_000tS6Nk" target="_blank" class="btn btn-sm btn-purple w-100">
+                                <i class="fa-brands fa-youtube me-2"></i> Watch Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="glass-card p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <h2 class="section-title mb-2">About <span>HF Plays</span></h2>
+                        <h4 class="text-white fw-semibold mb-3 about-name">
+                            Hilmi Fauzan <span class="about-dash">—</span> <span
+                                class="text-muted-custom fs-5 about-role">Content Creator &amp; Web Developer</span>
+                        </h4>
+                        <p class="text-muted-custom">
+                            Hilmi Fauzan is a passionate content creator focusing on real-world hardware benchmarking,
+                            game performance tests on budget systems, and PC optimization tutorials.
+                        </p>
+                        <p class="text-muted-custom mb-0">
+                            Equipped with strong web development and video production skills, HF Plays aims to provide
+                            transparent, accurate, and accessible gaming performance insights for the community.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="d-inline-flex gap-2 flex-wrap justify-content-center">
+                            <a href="https://www.youtube.com/@hfplays" target="_blank" class="social-pill"
+                                title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://discord.com/users/790507566333558784" target="_blank" class="social-pill"
+                                title="Discord"><i class="fa-brands fa-discord"></i></a>
+                            <a href="https://www.tiktok.com/@6hfplays" target="_blank" class="social-pill"
+                                title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.instagram.com/hfplays/" target="_blank" class="social-pill"
+                                title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/hilmi-fauzan-245a14428/" target="_blank"
+                                rel="noopener noreferrer" class="social-pill" title="LinkedIn"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/HFPlays/" target="_blank" class="social-pill"
+                                title="Facebook"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @media (max-width: 768px) {
+                        #about .row {
+                            text-align: center;
+                        }
+
+                        #about .col-lg-8,
+                        #about .col-lg-4 {
+                            text-align: center;
+                        }
+
+                        #about .about-name {
+                            display: block;
+                            margin-bottom: 0.25rem;
+                        }
+
+                        #about .about-dash {
+                            display: none;
+                        }
+
+                        #about .about-role {
+                            display: block;
+                            margin-top: 0.25rem;
+                            margin-bottom: 1rem;
+                        }
+                    }
+
+                    .contact-link {
+                        transition: all 0.25s ease;
+                        padding: 0.25rem 0.5rem;
+                        border-radius: 10px;
+                    }
+
+                    .contact-link:hover {
+                        color: #7dd3fc !important;
+                        background: rgba(125, 211, 252, 0.08);
+                        transform: translateX(4px);
+                    }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Get in <span>Touch</span></h2>
+                <p class="text-muted-custom">Submit game benchmark suggestions, ask hardware questions, or send testing
+                    feedback.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="glass-card p-4 p-md-5 h-100">
+                        <h4 class="text-white fw-bold mb-2">Send a Message</h4>
+                        <p class="text-muted-custom small mb-4">Direct message our inbox for benchmark requests and
+                            configs.</p>
+
+                        <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div>
+                                <input type="hidden" id="platformSelect" value="email">
+                                <div class="custom-select-wrapper" id="customDropdown">
+                                    <div class="custom-select-trigger" onclick="toggleDropdown()">
+                                        <span class="selected-val" id="selectedDisplay">
+                                            <i class="fa-regular fa-envelope icon-email"></i> Send via Email
+                                        </span>
+                                        <i class="fa-solid fa-chevron-down chevron"></i>
+                                    </div>
+                                    <div class="custom-options">
+                                        <div class="custom-option selected" data-value="email"
+                                            onclick="selectPlatform('email', '<i class=\'fa-regular fa-envelope icon-email\'></i> Send via Email', this)">
+                                            <div class="custom-option-label">
+                                                <i class="fa-regular fa-envelope icon-email"></i> Send via Email
+                                            </div>
+                                        </div>
+                                        <div class="custom-option disabled" data-value="whatsapp">
+                                            <div class="custom-option-label">
+                                                <i class="fa-brands fa-whatsapp icon-wa"></i> Send via WhatsApp
+                                            </div>
+                                            <span class="coming-soon-badge">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <input type="text" id="name" name="name" class="contact-input" placeholder="Full Name"
+                                    autocomplete="name" required>
+                            </div>
+                            <div>
+                                <input type="text" id="contactInfo" name="contactInfo" class="contact-input"
+                                    placeholder="Your Email Address" required>
+                            </div>
+                            <div>
+                                <textarea id="message" name="message" class="contact-textarea"
+                                    placeholder="Comments, Game Title, or Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-contact-submit">Submit Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="text-white fw-bold mb-2">Official Channels</h4>
+                            <p class="text-muted-custom small mb-4">Follow for direct game testing footage, system
+                                configurations, and performance archives.</p>
+
+                            <div class="d-flex flex-column gap-3 mb-4">
+                                <a href="https://www.youtube.com/@hfplays" target="_blank" rel="noopener noreferrer"
+                                    class="d-flex align-items-center gap-3 text-decoration-none text-light contact-link">
+                                    <div class="fs-5 text-danger d-flex justify-content-center align-items-center"
+                                        style="width: 28px;">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </div>
+                                    <span>HF Plays</span>
+                                </a>
+
+                                <a href="https://bench.hfplays.my.id" target="_blank" rel="noopener noreferrer"
+                                    class="d-flex align-items-center gap-3 text-decoration-none text-light contact-link benchmark-link">
+                                    <div class="fs-5 text-info d-flex justify-content-center align-items-center"
+                                        style="width: 28px;">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <span>BenchmarkResult by HF Plays</span>
+                                </a>
+
+                                <a href="https://www.tiktok.com/@6hfplays" target="_blank" rel="noopener noreferrer"
+                                    class="d-flex align-items-center gap-3 text-decoration-none text-light contact-link">
+                                    <div class="fs-5 text-white d-flex justify-content-center align-items-center"
+                                        style="width: 28px;">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </div>
+                                    <span>HF Plays</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10">
+                            <h6 class="text-uppercase text-muted-custom small fw-bold mb-3">Direct Community & Profiles
+                            </h6>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="https://www.youtube.com/@hfplays" target="_blank" rel="noopener noreferrer"
+                                    class="social-pill" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="https://discord.com/users/790507566333558784" target="_blank"
+                                    rel="noopener noreferrer" class="social-pill" title="Discord"><i
+                                        class="fa-brands fa-discord"></i></a>
+                                <a href="https://www.tiktok.com/@6hfplays" target="_blank" rel="noopener noreferrer"
+                                    class="social-pill" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                                <a href="https://www.instagram.com/hfplays/" target="_blank" rel="noopener noreferrer"
+                                    class="social-pill" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/hilmi-fauzan-245a14428/" target="_blank"
+                                    rel="noopener noreferrer" class="social-pill" title="LinkedIn"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://www.facebook.com/HFPlays/" target="_blank" rel="noopener noreferrer"
+                                    class="social-pill" title="Facebook"><i
+                                        class="fa-brands fa-facebook-messenger"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-5 pb-4 border-top border-secondary border-opacity-10">
+        <div class="container">
+            <div class="row g-4 mb-4 align-items-center">
+                <div class="col-lg-7">
+                    <h4 class="text-white fw-bold mb-2">HF <span>Plays</span></h4>
+                    <p class="text-muted-custom small mb-0 pe-lg-4">
+                        Your trusted source for PC performance insights, benchmark results, and hardware optimization
+                        tutorials. Built for gamers, hardware enthusiasts, and low-end PC warriors.
+                    </p>
+                </div>
+
+                <div class="col-lg-5">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-lg-end gap-3 gap-md-4 mb-0 small">
+                        <li><a href="#home" class="text-decoration-none text-muted-custom">Home</a></li>
+                        <li><a href="#benchmarks" class="text-decoration-none text-muted-custom">Benchmarks</a></li>
+                        <li><a href="#tutorials" class="text-decoration-none text-muted-custom">Tutorials</a></li>
+                        <li><a href="#about" class="text-decoration-none text-muted-custom">About</a></li>
+                        <li><a href="#contact" class="text-decoration-none text-muted-custom">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="text-center pt-3 border-top border-secondary border-opacity-10 text-muted-custom small d-flex flex-wrap justify-content-center align-items-center gap-2">
+                <span>&copy; 2026 HF Plays. All Rights Reserved.</span>
+                <span class="opacity-50">·</span>
+                <button type="button" class="footer-policy-link" id="privacyPolicyBtn">Privacy Policy</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="privacy-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle"
+        hidden>
+        <div class="privacy-modal-panel" role="document">
+            <div class="privacy-modal-header">
+                <div>
+                    <p class="privacy-modal-eyebrow">HF Plays</p>
+                    <h2 class="text-white mb-0" id="privacyModalTitle">Privacy Policy</h2>
+                </div>
+                <button type="button" class="privacy-modal-close" id="privacyModalClose"
+                    aria-label="Close Privacy Policy">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="privacy-modal-body text-muted-custom">
+                <p><strong class="text-white">Last updated:</strong> August 20, 2026</p>
+                <p>Welcome to <strong>HF Plays</strong>. We provide real-world hardware benchmarks, gaming optimization
+                    tutorials, and PC performance comparisons. We value your digital privacy and strive for complete
+                    transparency regarding how your data is handled when you visit our website.</p>
+
+                <h3 class="text-white"><i class="fa-solid fa-user-shield me-2"></i> Information We Collect</h3>
+                <p>You can freely browse all benchmark databases and video guides without registration or login. We do
+                    not maintain user accounts or collect sensitive data.</p>
+
+                <h3 class="text-white"><i class="fa-solid fa-paper-plane me-2"></i> Direct Messaging & Contact Form</h3>
+                <p>When using our contact form, no messages are stored on our servers. Depending on your chosen method:
+                </p>
+                <ul>
+                    <li><strong>Email:</strong> Your name, email, and message are formatted into a pre-filled draft in
+                        your default email client.</li>
+                    <li><strong>WhatsApp:</strong> Your inquiry is converted into a secure direct chat link via the
+                        official WhatsApp API.</li>
+                </ul>
+
+                <h3 class="text-white"><i class="fa-solid fa-cookie-bite me-2"></i> Local Storage & Preferences</h3>
+                <p>We do not use tracking or advertising cookies. We only utilize your browser’s
+                    <code>localStorage</code> and <code>sessionStorage</code> to remember your cookie notice choice
+                    (Accept / Decline) so the prompt does not reappear during your sessions. You can reset this data
+                    anytime via your browser settings.</p>
+
+                <h3 class="text-white"><i class="fa-solid fa-arrow-up-right-from-square me-2"></i> External Links &
+                    Hardware Databases</h3>
+                <p>Our website references external hardware specifications (e.g., TechPowerUp, Intel ARK) and connects
+                    to official HF Plays community channels across YouTube, TikTok, Discord, Instagram, Facebook, and
+                    LinkedIn. Please review the independent privacy policies of these third-party platforms when
+                    navigating to them.</p>
+
+                <h3 class="text-white"><i class="fa-solid fa-envelope me-2"></i> Contact & Questions</h3>
+                <p>For any hardware inquiries, benchmark suggestions, or privacy questions, reach out via the contact
+                    form above or email us directly at <a href="mailto:hilmipc06@gmail.com"
+                        class="text-primary-link">hilmipc06@gmail.com</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
-
